@@ -46,6 +46,7 @@ impl Display for Error {
 impl std::error::Error for Error {}
 
 /// A bus that's agnostic to the range address type and device type.
+#[derive(Clone)]
 pub struct Bus<A: BusAddress, D> {
     devices: BTreeMap<BusRange<A>, D>,
 }
